@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
+    "@web3auth/web3auth-wagmi-connector": "^1.0.0",
     "antd": "^4.22.8",
     "axios": "^1.1.2",
+    "bootstrap": "^5.2.2",
     "ethers": "^5.7.1",
     "graphql": "^16.6.0",
     "moralis": "^2.6.4",

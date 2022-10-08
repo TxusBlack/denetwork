@@ -8,7 +8,6 @@ const config = {
 };
 
 const handler = async (req, res) => {
-  console.log(req.body)
   const { address, chain, network } = req.body;
 
   await Moralis.start({ apiKey: process.env.MORALIS_API_KEY });
