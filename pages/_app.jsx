@@ -6,6 +6,7 @@ import {
 } from "wagmi";
 import { publicProvider } from "wagmi/providers/public";
 import { SessionProvider } from "next-auth/react";
+import '../styles/auth.css'
 
 const { provider, webSocketProvider } = configureChains(defaultChains, [
   publicProvider(),

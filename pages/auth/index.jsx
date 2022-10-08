@@ -7,6 +7,8 @@ import { useAccount, useConnect, useSignMessage, useDisconnect } from "wagmi";
 import { useRouter } from "next/router";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.css";
+import { Button } from "antd";
+// import "../../styles/auth.css";
 
 const AuthPage = () => {
   const { connectAsync } = useConnect();
@@ -67,7 +69,8 @@ const AuthPage = () => {
     }
 
     const userData = {
-      address: service != "web3auth" ? connection?.account : accountWeb3Auto.account,
+      address:
+        service != "web3auth" ? connection?.account : accountWeb3Auto.account,
       chain: service != "web3auth" ? connection?.chain.id : "0x1",
       network: "evm",
     };
@@ -92,28 +95,70 @@ const AuthPage = () => {
   };
 
   return (
-    <div className="container-fluid">
+    <div className="container pt-3">
       <h3>Web3 Authentication</h3>
-      <div className="flex">
-        <div className="pb-2">
-          <button onClick={() => handleAuth("metamask")}>
-            Authenticate via Metamask
-          </button>
+      <div className="row">
+        <div className="col d-flex justify-content-end">
+          <Button
+            className="mb-4 p-3 card-login"
+            onClick={() => handleAuth("metamask")}
+            type="primary"
+          >
+            <p>Authenticate via Metamask</p>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/MetaMask_Fox.svg/800px-MetaMask_Fox.svg.png"
+              alt="Login with Metamask"
+              srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/MetaMask_Fox.svg/800px-MetaMask_Fox.svg.png"
+              className="img-fluid"
+            />
+          </Button>
         </div>
-        <div className="pb-2">
-          <button onClick={() => handleAuth("walletconnect")}>
-            Authenticate via Wallet Connect
-          </button>
+        <div className="col d-flex justify-content-start">
+          <Button
+            className="mb-4 p-3 card-login"
+            onClick={() => handleAuth("walletconnect")}
+            type="primary"
+          >
+            <p>Authenticate via Wallet Connect</p>
+            <img
+              src="https://images.opencollective.com/walletconnect/4d377ed/logo/256.png"
+              alt="Login with Wallet Connect"
+              srcset="https://images.opencollective.com/walletconnect/4d377ed/logo/256.png"
+              className="img-fluid"
+            />
+          </Button>
         </div>
-        <div className="pb-2">
-          <button onClick={() => handleAuth("coinbase")}>
-            Authenticate via Coinbase Wallet
-          </button>
+      </div>
+      <div className="row">
+        <div className="col d-flex justify-content-end">
+          <Button
+            className="mb-4 p-3 card-login"
+            onClick={() => handleAuth("coinbase")}
+            type="primary"
+          >
+            <p>Authenticate via Coinbase Wallet</p>
+            <img
+              src="https://avatars.githubusercontent.com/u/18060234?s=280&v=4"
+              alt="Login with Coinbase Wallet"
+              srcset="https://avatars.githubusercontent.com/u/18060234?s=280&v=4"
+              className="img-fluid"
+            />
+          </Button>
         </div>
-        <div className="pb-2">
-          <button onClick={() => handleAuth("web3auth")}>
-            Authenticate via Web3Auth
-          </button>
+        <div className="col d-flex justify-content-start">
+          <Button
+            className="mb-4 p-3 card-login"
+            onClick={() => handleAuth("web3auth")}
+            type="primary"
+          >
+            <p>Authenticate via Web3Auth</p>
+            <img
+              src="https://tor.us/images/Web3Auth.svg"
+              alt="Login with Web3Auth"
+              srcset="https://tor.us/images/Web3Auth.svg"
+              className="img-fluid"
+            />
+          </Button>
         </div>
       </div>
     </div>
