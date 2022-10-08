@@ -1,15 +1,15 @@
-import styles from "../styles/Home.module.css";
-import { client, Profile } from "./api/lensCalls";
+import styles from "../../styles/Home.module.css";
+import { client, Profile } from "../api/lensCalls";
 import { Tabs, Button } from "antd";
 import Moralis from "moralis";
 import { useConnect, useAccount, useDisconnect, useContractWrite, usePrepareContractWrite } from 'wagmi'
 import { MetaMaskConnector } from "wagmi/connectors/metaMask";
-import abi from "../abi.json";
+import abi from "../../abi.json";
 
 
 const { TabPane } = Tabs;
 
-export default function Home({ profile, nftArray, myNFT }) {
+export default function ProfilePage({ profile, nftArray, myNFT }) {
   /* console.log(profile);
   console.log(nftArray); 
   console.log(myNFT);*/
