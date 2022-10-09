@@ -1,6 +1,13 @@
 import "bootstrap/dist/css/bootstrap.css";
+import { useRouter } from "next/router";
 
 const NewUserPage = () => {
+  const router = useRouter();
+
+  const goToMainPage = () => {
+    router.push(`/main`);
+  };
+
   return (
     <div
       style={{ backgroundColor: "black", color: "white" }}
@@ -9,7 +16,7 @@ const NewUserPage = () => {
       <div className="container h-100 pt-3">
         <h3 className="text-center pb-4">Selecciona el tipo de perfil</h3>
         <div className="row">
-          <div className="col justify-content-center d-flex">
+          <div className="col justify-content-center d-flex" onClick={() => goToMainPage()}>
             <div class="card" style={{"width": "50%", color: "black"}}>
               <img
                 src="https://www.freeiconspng.com/thumbs/recruitment-icon/recruitment-icon-2.png"
@@ -23,7 +30,7 @@ const NewUserPage = () => {
               </div>
             </div>
           </div>
-          <div className="col justify-content-center d-flex">
+          <div className="col justify-content-center d-flex" onClick={() => goToMainPage()}>
             <div class="card" style={{"width": "50%", color: "black"}}>
               <img
                 src="https://png.pngtree.com/png-vector/20191026/ourlarge/pngtree-laptop-icon-png-image_1871597.jpg"
