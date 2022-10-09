@@ -56,7 +56,7 @@ const AuthPage = () => {
       connection = await connectAsync({
         connector: new CoinbaseWalletConnector({
           options: {
-            appName: "deworking.finance",
+            appName: "denetwork.finance",
           },
         }),
       });
