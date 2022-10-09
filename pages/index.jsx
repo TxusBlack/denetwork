@@ -17,8 +17,9 @@ const LandingPage = () => {
         <div className="row">
           <div className="col">
             <div>
-              <img src="/logo.jpeg" alt="Denetwork" />
+              <img src="/logo.jpeg" alt="Denetwork" className="mx-auto d-block img-fluid" />
             </div>
+            <h3 className="text-center text-white mb-4">Building decentralized and inclusive job opportunities<br/>for the creators of the future.</h3>
             <button type="button" class="btn btn-dark mx-auto d-block" onClick={() => goToAuth()}>
               Let's start!
             </button>
